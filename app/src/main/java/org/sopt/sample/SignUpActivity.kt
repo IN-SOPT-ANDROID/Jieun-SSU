@@ -23,6 +23,7 @@ class SignUpActivity : AppCompatActivity() {
                     val intent =
                         Intent(this, SignInActivity::class.java)  //val은 변하지 않는 값, var은 변하는 값
                 // putExtra는 함수이며 값을 보냄.
+                // 값을 보낸다기 보다는 intent로 담는다.
                     intent.putExtra("userid", binding.etSignupid.text.toString())
                     intent.putExtra("userpassword", binding.etSignuppassword.text.toString())
                     intent.putExtra("usermbti", binding.etSignupmbti.text.toString())

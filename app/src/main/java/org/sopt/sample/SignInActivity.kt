@@ -13,7 +13,7 @@ import org.sopt.sample.databinding.ActivitySignInBinding
 //로그인
 class SignInActivity : AppCompatActivity() {  //여기서 class는 한 화면이라고 생각하면 된다.
     private lateinit var binding: ActivitySignInBinding
-    private var id: String? = null
+    private lateinit var id: String
     private var password: String? = null
     private var mbti: String? = null
     private lateinit var activityResultLauncher: ActivityResultLauncher<Intent>
@@ -36,7 +36,7 @@ class SignInActivity : AppCompatActivity() {  //여기서 class는 한 화면이
     }
 
 
-    //? -이것은 엘비스 연산자라고 함, null 값이 가능하다 (코틀린은 nullable이다)
+    //? -이것은 엘비스 연산자라고 함, 엘비스 연산자는 앞값이 null 일때 뒷값으로 초기화해주는 작업을 해준다. null 값이 가능하다 (코틀린은 nullable이다)
     //SignUpActivity가 call back
     //로그인 성공
     private fun clickloginbtn() {  //함수같은 것도 다 class에 집어 넣기
