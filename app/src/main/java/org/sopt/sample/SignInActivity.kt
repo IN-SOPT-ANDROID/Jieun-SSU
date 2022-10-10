@@ -10,7 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.snackbar.Snackbar
 import org.sopt.sample.databinding.ActivitySignInBinding
 
-//로그인
+//로그인 페이지
 class SignInActivity : AppCompatActivity() {  //여기서 class는 한 화면이라고 생각하면 된다.
     private lateinit var binding: ActivitySignInBinding
     private lateinit var id: String
@@ -21,7 +21,7 @@ class SignInActivity : AppCompatActivity() {  //여기서 class는 한 화면이
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivitySignInBinding.inflate(layoutInflater)
-        setContentView(binding.root)  //binding부분 순서 주의하기
+        setContentView(binding.root)  //binding 부분 순서 주의하기
         activityResultLauncher =
             registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
                 if (result.resultCode == RESULT_OK) {
