@@ -9,6 +9,7 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.snackbar.Snackbar
 import org.sopt.sample.databinding.ActivitySignInBinding
+import org.sopt.sample.MainActivity
 
 //로그인 페이지
 class SignInActivity : AppCompatActivity() {  //여기서 class는 한 화면이라고 생각하면 된다.

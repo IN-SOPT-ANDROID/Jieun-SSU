@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">INSOPTAndroidPractice</string>
+    <string name="NAMETITLE">이름: %s</string>
+    <string name="MBTITITLE">MBTI: %s</string>
 </resources>
