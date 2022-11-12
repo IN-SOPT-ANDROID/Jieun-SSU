@@ -7,7 +7,7 @@
     tools:context=".SignUpActivity">
 
     <TextView
-        android:id="@+id/txt_signuptitle"
+        android:id="@+id/tv_signuptitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="60dp"
@@ -19,7 +19,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/txt_signupid"
+        android:id="@+id/tv_signupid"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
@@ -27,7 +27,7 @@
         android:text="ID"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/txt_signuptitle" />
+        app:layout_constraintTop_toBottomOf="@id/tv_signuptitle" />
 
     <EditText
         android:id="@+id/et_signupid"
@@ -36,10 +36,10 @@
         android:layout_marginHorizontal="40dp"
         android:layout_marginTop="20dp"
         android:hint="아이디를 입력하세요"
-        app:layout_constraintTop_toBottomOf="@id/txt_signupid" />
+        app:layout_constraintTop_toBottomOf="@id/tv_signupid" />
 
     <TextView
-        android:id="@+id/txt_signuppassword"
+        android:id="@+id/tv_signuppassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
@@ -57,10 +57,10 @@
         android:layout_marginTop="20dp"
         android:hint="비밀번호를 입력하세요"
         android:inputType="textPassword"
-        app:layout_constraintTop_toBottomOf="@id/txt_signuppassword" />
+        app:layout_constraintTop_toBottomOf="@id/tv_signuppassword" />
 
     <TextView
-        android:id="@+id/txt_signupmbti"
+        android:id="@+id/tv_signupmbti"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
@@ -77,7 +77,7 @@
         android:layout_marginHorizontal="40dp"
         android:layout_marginTop="20dp"
         android:hint="MBTI를 입력하세요"
-        app:layout_constraintTop_toBottomOf="@id/txt_signupmbti" />
+        app:layout_constraintTop_toBottomOf="@id/tv_signupmbti" />
 
 
     <Button
