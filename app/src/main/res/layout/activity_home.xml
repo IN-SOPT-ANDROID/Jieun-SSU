@@ -27,16 +27,16 @@
         tools:text="이름: 김지은"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/image_profile"/>
+        app:layout_constraintTop_toBottomOf="@id/iv_profile"/>
 
     <TextView
-        android:id="@+id/tv_mbti"
+        android:id="@+id/tv_email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
-        tools:text="MBTI: ESFJ"
+        tools:text="Emaiil: sopt@sopt.org"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/txt_name"/>
+        app:layout_constraintTop_toBottomOf="@id/tv_name"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

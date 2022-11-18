@@ -2,6 +2,7 @@ package org.sopt.sample
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.fragment.app.Fragment
 import org.sopt.sample.databinding.ActivityHomeBinding
 
 class HomeActivity : AppCompatActivity() {
@@ -11,7 +12,14 @@ class HomeActivity : AppCompatActivity() {
         binding=ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.txtName.text="이름: " + intent.getStringExtra("id")
-        binding.txtMbti.text="MBTI: "+ intent.getStringExtra("mbti")
+        val currentFragment=supportFragmentManager.findFragmentById(R.id.home_container)
+        if(currentFragment==null){
+            supportFragmentManager.beginTransaction().add(R.id.home_container,HomeFragment()).commit()
+        }
+        binding.tvName.text="이름: " + intent.getStringExtra("id")
+        binding.tvEmail.text="Email: "+ intent.getStringExtra("email")
+    }
+    private fun changeFragment(fragment: Fragment){
+        supportFragmentManager.beginTransaction().replace(R.id.home_container, fragment).commit()
     }
 }
