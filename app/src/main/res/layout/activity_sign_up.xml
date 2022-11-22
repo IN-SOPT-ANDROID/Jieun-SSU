@@ -19,24 +19,24 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/tv_signupid"
+        android:id="@+id/tv_signupemail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
         android:layout_marginTop="24dp"
-        android:text="ID"
+        android:text="EMAIL"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_signuptitle" />
 
     <EditText
-        android:id="@+id/et_signupid"
+        android:id="@+id/et_signupemail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="40dp"
         android:layout_marginTop="20dp"
-        android:hint="아이디를 입력하세요"
-        app:layout_constraintTop_toBottomOf="@id/tv_signupid" />
+        android:hint="이메일을 입력하세요"
+        app:layout_constraintTop_toBottomOf="@id/tv_signupemail" />
 
     <TextView
         android:id="@+id/tv_signuppassword"
@@ -47,7 +47,7 @@
         android:text="Password"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/et_signupid" />
+        app:layout_constraintTop_toBottomOf="@id/et_signupemail" />
 
     <EditText
         android:id="@+id/et_signuppassword"
@@ -60,24 +60,24 @@
         app:layout_constraintTop_toBottomOf="@id/tv_signuppassword" />
 
     <TextView
-        android:id="@+id/tv_signupmbti"
+        android:id="@+id/tv_signupname"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
         android:layout_marginTop="24dp"
-        android:text="MBTI"
+        android:text="NAME"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/et_signuppassword" />
 
     <EditText
-        android:id="@+id/et_signupmbti"
+        android:id="@+id/et_signupname"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="40dp"
         android:layout_marginTop="20dp"
-        android:hint="MBTI를 입력하세요"
-        app:layout_constraintTop_toBottomOf="@id/tv_signupmbti" />
+        android:hint="이름을 입력하세요"
+        app:layout_constraintTop_toBottomOf="@id/tv_signupname" />
 
 
     <Button
@@ -87,6 +87,6 @@
         android:layout_marginHorizontal="40dp"
         android:layout_marginTop="20dp"
         android:text="회원가입 완료"
-        app:layout_constraintTop_toBottomOf="@id/et_signupmbti" />
+        app:layout_constraintTop_toBottomOf="@id/et_signupname" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

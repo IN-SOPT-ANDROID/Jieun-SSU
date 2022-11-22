@@ -1,8 +1,12 @@
 package org.sopt.sample
+import kotlinx.serialization.SerialName
 
 data class UserData(
-    val img: Int,  //img는 int 형 데이터이다.
-    val title: String,
-    val content: String,
-    val type: Int = 1,
+    @SerialName("avatar")
+    val image:String,
+    @SerialName("first-name")
+    val name:String,
+    val author:String,
+    @SerialName("email")
+    val email:String
 )

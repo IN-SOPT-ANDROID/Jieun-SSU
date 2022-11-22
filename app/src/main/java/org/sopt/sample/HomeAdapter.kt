@@ -42,22 +42,21 @@ import org.sopt.sample.databinding.ItemHeaderBinding
     }
 
     override fun getItemViewType(position: Int): Int {
-        return if(userList[position].type== 0)
+        return if(userList[position].type == 0)
             Header
         else Body
-
     }
 
     override fun getItemCount(): Int = userList.size
-        //inner class ~ : 이건 사용을 지양하는 것이 좋다.
-        //이유: inner 클래스를 사용하면 내부클래스에서 외부클래스의 자원을 참조할 수 있는데 이때 외부에 있는 변수가 소멸된 상태라면 의도치 안은 크러쉬를 발생시킬 수 있다.
+        // inner class ~ : 이건 사용을 지양하는 것이 좋다.
+        // 이유: inner 클래스를 사용하면 내부클래스에서 외부클래스의 자원을 참조할 수 있는데 이때 외부에 있는 변수가 소멸된 상태라면 의도치 안은 크러쉬를 발생시킬 수 있다.
     class HomeViewHolder(
         private val binding: ItemHomeBinding
     ) : RecyclerView.ViewHolder(binding.root) {
         fun onBind(data: UserData) {
-            binding.ivGit.setImageResource(data.img)
-            binding.tvContent.text=data.title
-            binding.tvName.text=data.content
+//            binding.ivGit.setImageResource(data.img)
+//            binding.tvContent.text=data.title
+//            binding.tvName.text=data.content
         }
     }
 
