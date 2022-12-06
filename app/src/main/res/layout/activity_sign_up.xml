@@ -1,9 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
+    <layout xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="viewmodel"
+            type="org.sopt.sample.SignUpViewModel" />
+    </data>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="28dp"
+    android:orientation="vertical"
     tools:context=".SignUpActivity">
 
     <TextView
@@ -22,63 +29,88 @@
         android:id="@+id/tv_signupemail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
+        android:layout_marginStart="10dp"
         android:layout_marginTop="24dp"
         android:text="EMAIL"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_signuptitle" />
 
-    <EditText
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:id="@+id/tv_signupemailbox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        app:errorEnabled="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_signupemail" >
+    <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/et_signupemail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="40dp"
-        android:layout_marginTop="20dp"
-        android:hint="이메일을 입력하세요"
-        app:layout_constraintTop_toBottomOf="@id/tv_signupemail" />
+        android:text="@={viewmodel.inputEmail}"
+        android:hint="이메일을 입력하세요" />
+</com.google.android.material.textfield.TextInputLayout>
 
     <TextView
         android:id="@+id/tv_signuppassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
+        android:layout_marginStart="10dp"
         android:layout_marginTop="24dp"
         android:text="Password"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/et_signupemail" />
+        app:layout_constraintTop_toBottomOf="@id/tv_signupemailbox"/>
 
-    <EditText
-        android:id="@+id/et_signuppassword"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="40dp"
-        android:layout_marginTop="20dp"
-        android:hint="비밀번호를 입력하세요"
-        android:inputType="textPassword"
-        app:layout_constraintTop_toBottomOf="@id/tv_signuppassword" />
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:id="@+id/tv_signuppasswordbox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:errorEnabled="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_signuppassword">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_signuppassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@={viewmodel.inputPw}"
+            android:hint="비밀번호을 입력하세요" />
+    </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
-        android:id="@+id/tv_signupname"
+        android:id="@+id/tv_signupid"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
+        android:layout_marginStart="10dp"
         android:layout_marginTop="24dp"
-        android:text="NAME"
+        android:text="ID"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/et_signuppassword" />
+        app:layout_constraintTop_toBottomOf="@id/tv_signuppasswordbox" />
 
-    <EditText
-        android:id="@+id/et_signupname"
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:id="@+id/tv_signupidbox"
+        android:visibility="visible"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_signupid">
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/et_signupid"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="40dp"
-        android:layout_marginTop="20dp"
-        android:hint="이름을 입력하세요"
-        app:layout_constraintTop_toBottomOf="@id/tv_signupname" />
-
+        android:text="@={viewmodel.inputId}"
+        android:hint="아이디를 입력하세요" />
+</com.google.android.material.textfield.TextInputLayout>
 
     <Button
         android:id="@+id/btn_success"
@@ -87,6 +119,8 @@
         android:layout_marginHorizontal="40dp"
         android:layout_marginTop="20dp"
         android:text="회원가입 완료"
-        app:layout_constraintTop_toBottomOf="@id/et_signupname" />
+        android:enabled="false"
+        app:layout_constraintTop_toBottomOf="@id/tv_signupidbox" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
