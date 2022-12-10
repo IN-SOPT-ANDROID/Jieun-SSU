@@ -27,4 +27,5 @@ object ApiFactory {
 }
 object ServicePool {
     val AuthService = ApiFactory.create<AuthService>()
+    val musicUploadService = ApiFactory.create<MusicUploadService>()
 }
