@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SearchFragment">
-
-    <TextView
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="SearchFragment">
+<!--homefragment꺼 가져다씀-->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_music"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Search Fragment"
-        android:gravity="center"/>
+        android:orientation="vertical"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:listitem="@layout/item_home" />
+</androidx.constraintlayout.widget.ConstraintLayout>
 
-</FrameLayout>
