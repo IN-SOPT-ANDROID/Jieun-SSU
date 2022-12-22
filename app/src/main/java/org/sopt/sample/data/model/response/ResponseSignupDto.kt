@@ -3,27 +3,27 @@ package org.sopt.sample.data.model.response
 import kotlinx.serialization.SerialName
 
 @kotlinx.serialization.Serializable
-data class ResponseLoginDTO(
-    @SerialName("status")
-    val status: Int,
+data class ResponseSignupDto(
     @SerialName("message")
     val message: String,
-    @SerialName("result")
-    val result: User
-){
+    @SerialName("newUser")
+    val newUser: NewUser,
+    @SerialName("status")
+    val status: Int
+) {
     @kotlinx.serialization.Serializable
-    data class User(
-        @SerialName("id")
-        val id: Int,
-        @SerialName("name")
-        val name: String,
-        @SerialName("profileImage")
-        val profileImage: String?,
+    data class NewUser(
         @SerialName("bio")
         val bio: String?,
         @SerialName("email")
         val email: String,
+        @SerialName("id")
+        val id: Int,
+        @SerialName("name")
+        val name: String,
         @SerialName("password")
-        val password: String
+        val password: String,
+        @SerialName("profileImage")
+        val profileImage: String?
     )
 }

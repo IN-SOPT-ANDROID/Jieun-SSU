@@ -42,7 +42,7 @@ import org.sopt.sample.databinding.ItemHeaderBinding
     }
 
     override fun getItemViewType(position: Int): Int {
-        return if(userList[position].type == 0)
+        return if(position== 0)   //헤더를 가져오기
             Header
         else Body
     }

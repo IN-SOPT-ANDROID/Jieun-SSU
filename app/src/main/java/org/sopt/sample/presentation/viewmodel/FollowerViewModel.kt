@@ -10,7 +10,7 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class FollowerViewModel : ViewModel() {
-    val followerList = mutableListOf<ResponseFollowerDTO>()
+    val followerList = mutableListOf<ResponseFollowerDTO.Person>()
     private val followerService = FollowerServicePool.FollowerService
 
     private val _getResult: MutableLiveData<ResponseFollowerDTO> = MutableLiveData()
@@ -22,7 +22,7 @@ class FollowerViewModel : ViewModel() {
     val errorMessage: LiveData<String> = _errorMessage
 
     fun getData() {
-        followerService.getData().enqueue(object: Callback<ResponseFollowerDTO> {
+        followerService.getData(2).enqueue(object: Callback<ResponseFollowerDTO> {   //여기에 요청하는 값인 2를 넣기
             override fun onResponse(
                 call: Call<ResponseFollowerDTO>,
                 response: Response<ResponseFollowerDTO>

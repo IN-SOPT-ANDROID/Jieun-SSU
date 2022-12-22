@@ -6,6 +6,6 @@ import retrofit2.http.GET
 import retrofit2.http.Query
 
 interface FollowerService {
-    @GET("api/users?page=2")
+    @GET("api/users")
     fun getData(@Query("page") page: Int): Call<ResponseFollowerDTO>
 }

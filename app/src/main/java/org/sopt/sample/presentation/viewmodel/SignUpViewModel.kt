@@ -5,7 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Transformations
 import androidx.lifecycle.ViewModel
 import org.sopt.sample.data.model.request.RequestSignupDTO
-import org.sopt.sample.data.model.response.ResponseSignupDTO
+import org.sopt.sample.data.model.response.ResponseSignupDto
 import org.sopt.sample.data.service.ServicePool
 import retrofit2.Call
 import retrofit2.Callback
@@ -17,8 +17,8 @@ class SignUpViewModel : ViewModel() {
     val Pwpattern = "^(?=.*[A-Za-z])(?=.*[0-9])(?=.*[$@$!%*#?&.])[A-Za-z[0-9]$@$!%*#?&.]{6,12}$"
 
     // backing property: 왜 이런식으로 변수를 만드나? 외부 뷰에서 수정할 필요가 없는 변수
-    private val _signupResult: MutableLiveData<ResponseSignupDTO> = MutableLiveData()
-    val signupResult: LiveData<ResponseSignupDTO> = _signupResult
+    private val _signupResult: MutableLiveData<ResponseSignupDto> = MutableLiveData()
+    val signupResult: LiveData<ResponseSignupDto> = _signupResult
     private val signupService = ServicePool.AuthService
 
     private val _successSignup = MutableLiveData<Boolean>()
@@ -41,10 +41,10 @@ class SignUpViewModel : ViewModel() {
     fun signup(email: String, password: String, id: String) {
         signupService.signup(
             RequestSignupDTO(email, password, id)
-        ).enqueue(object : Callback<ResponseSignupDTO> {
+        ).enqueue(object : Callback<ResponseSignupDto> {
             override fun onResponse(
-                call: Call<ResponseSignupDTO>,
-                response: Response<ResponseSignupDTO>
+                call: Call<ResponseSignupDto>,
+                response: Response<ResponseSignupDto>
             ) {
                 if (response.isSuccessful) {
                     _signupResult.value = response.body()
@@ -55,7 +55,7 @@ class SignUpViewModel : ViewModel() {
                 }
             }
 
-            override fun onFailure(call: Call<ResponseSignupDTO>, t: Throwable) {
+            override fun onFailure(call: Call<ResponseSignupDto>, t: Throwable) {
                 // 서버통신 자체가 실패
                 _serverError.value = t.message
                 _successSignup.value = false
@@ -67,7 +67,7 @@ class SignUpViewModel : ViewModel() {
         return pattern.matcher(Email).find()
     }
 
-    private fun validPwcheck(Pw: String): Boolean { ]
+    private fun validPwcheck(Pw: String): Boolean {
         val pattern = Pattern.compile(Pwpattern)
         return pattern.matcher(Pw).find()
     }

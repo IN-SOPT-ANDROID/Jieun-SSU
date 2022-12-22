@@ -24,8 +24,8 @@ class HomeFragment : Fragment() {
     private var _binding: FragmentHomeBinding? = null
     private val binding: FragmentHomeBinding
         get() = _binding!!  //java
-    private lateinit var homeAdapter: HomeAdapter //HomeAdapter을 homeAdpater라고 부른다.
-    private val followerViewModel by viewModels<FollowerViewModel> {}
+    private lateinit var followerAdapter: FollowerAdapter  //HomeAdapter을 homeAdpater라고 부른다.
+    private val followerViewModel by viewModels<FollowerViewModel>()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -40,10 +40,12 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         followerViewModel.getData()
         followerViewModel.successGet.observe(viewLifecycleOwner){ success ->
-            if(success){
+            if(success){   // 통신에 성공했다면 adapter를 갱신시켜라
                 val adapter = context?.let { it1 ->
                     followerViewModel.getResult.value?.let {
-                        FollowerAdapter(FollowerViewModel.getResult.value!!.data, it1).apply {
+                        followerAdapter.userList()
+                    }
+                        followerAdapter(FollowerViewModel.getResult.value!!.data, it1).apply {
                             UserData(FollowerViewModel.getResult.value!!.data) //이 부분 모르겠음음                        }
                         }
                     }

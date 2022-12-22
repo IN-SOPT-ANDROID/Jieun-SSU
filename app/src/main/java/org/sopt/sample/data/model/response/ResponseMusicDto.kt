@@ -3,7 +3,7 @@ package org.sopt.sample.data.model.response
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class ResponseMusicDTO(
+data class ResponseMusicDto(
     val data: List<Data>
 ) {
     @Serializable
